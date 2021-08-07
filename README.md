@@ -1,4 +1,4 @@
-# 99 Prolog Problems
+# P99 Prolog Problems
 
 ## Solving P-99: Ninety-Nine Prolog Problems in APL
 
