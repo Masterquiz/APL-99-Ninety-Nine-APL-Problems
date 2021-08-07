@@ -8,11 +8,15 @@ Over at the [Prolog site] there is a recreation of the [99 Prolog Problems]. The
 
 This repository hosts a collection of solutions to those problems, written in [APL].
 
+Solved problems:
+    
+    First section (28 problems) - Missing p13, p27
+
 Settings:
     
     (⎕IO ⎕ML) ← 1 1
     
-    'pco' 'factors' ⎕CY 'dfns' ⍝  Dyalog's functions: https://dfns.dyalog.com/n_contents.htm
+    'cmat' ⎕CY 'dfns' ⍝  Dyalog's functions: https://dfns.dyalog.com/n_contents.htm
 
 
 [Prolog site]: https://sites.google.com/site/prologsite/
