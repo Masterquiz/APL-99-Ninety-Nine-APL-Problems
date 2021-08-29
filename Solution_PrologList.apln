@@ -1,37 +1,37 @@
 :Namespace prolog_lists
     
-    ⎕IO ⎕ML ← 1
-
-    'cmat' ⎕CY 'dfns' ⍝  Dyalog's functions: https://dfns.dyalog.com/n_contents.htm
-
-    last ← ⊃⌽
-    but_last ← 2⊃⌽
+       ⎕IO ⎕ML ← 1
+    
+       'cmat' ⎕CY 'dfns' ⍝  Dyalog's functions: https://dfns.dyalog.com/n_contents.htm
+          
+          last ← ⊃⌽
+      but_last ← 2⊃⌽
     element_at ← ⊃
-    length ← ≢
-    reverse ← ⌽
-    is_palindrom ← ⊢≡⌽
-    flatten ← ∊
-    compress ← ⊢⊢⍤/⍨1,2≠/⊢
-    pack ← ⊢⊂⍨1,2≠/⊢
-    encode ← (≢,⊃)¨pack
-    encode_mod ← (1~⍨≢,⊃)¨pack
+        length ← ≢
+       reverse ← ⌽
+  is_palindrom ← ⊢≡⌽
+       flatten ← ∊
+      compress ← ⊢⊢⍤/⍨1,2≠/⊢
+          pack ← ⊢⊂⍨1,2≠/⊢
+        encode ← (≢,⊃)¨pack
+    encode_mod ← (⊃,⍨1~⍨≢)¨pack
     decode_mod ← ∊∘(⍴/¨⊆)
     encode_dir ← ⊢ ⍝ Not solved
-    duplicate ← 2∘/
-    replicate ← /
-    drop_every ← {⍵/⍨0≠⍺|⍳≢⍵}
-    split ← ↑,⍥⊂↓
-    slice ← {⍵/⍨1=(⍺+0 1)⍸⍳≢⍵}
-    rotate ← ⌽
-    remove_at ← ⊢⌷⍨∘⊂~⍨∘⍳∘≢   ⍝ Solution in Extended Dyalog APL: ~⍨∘⍳∘≢⊇⊢ or (⍳⍤≢⍛~⊇⊣)⍨
-    insert_at ← {⍵ (↑,(⊂⍺⍺),↓)⍨ ⍵⍵-1}
-    range ← ⊣+0,⍳⍤-⍨
+     duplicate ← 2∘/
+     replicate ← /
+    drop_every ← ⊢⊢⍤/⍨0≠|∘⍳∘≢                 
+         split ← ↑,⍥⊂↓
+         slice ← {⍵/⍨1=(⍺+0 1)⍸⍳≢⍵} ⍝ Train: ⊢⊢⍤/⍨1=(0 1+⊣)⍸(⍳∘≢⊢)
+        rotate ← ⌽
+     remove_at ← ⊢⌷⍨∘⊂~⍨∘⍳∘≢   ⍝ Solution in Extended Dyalog APL: ~⍨∘⍳∘≢⊇⊢ or (⍳⍤≢⍛~⊇⊣)⍨
+     insert_at ← {⍵ (↑,(⊂⍺⍺),↓)⍨ ⍵⍵-1}
+         range ← ⊣+0,⍳⍤-⍨
     rnd_select ← ⊢⌷⍨∘⊂?∘≢
-    lotto ← ?
-    rnd_perm ← ?⍨≢⌷⊢
-    comb ← cmat
-    group ← ⊢ ⍝ Not solved
-    lsort ← {⍵[⍋≢¨⍵]}
-    lfsort ← {⍵⌷⍨{,/⍵[⍋≢¨⍵]}⊢∘↓⌸≢¨⍵}
-
+         lotto ← ?
+      rnd_perm ← ?⍨≢⌷⊢
+          comb ← cmat
+         group ← ⊢ ⍝ Not solved
+         lsort ← ⊢⌷⍨∘⊂∘⍋≢¨
+        lfsort ← {⍵⌷⍨{,/⍵[⍋≢¨⍵]}⊢∘↓⌸≢¨⍵}
+        
 :EndNamespace
