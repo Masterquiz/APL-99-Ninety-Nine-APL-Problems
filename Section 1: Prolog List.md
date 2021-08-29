@@ -4,9 +4,9 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 
 ## Problem 1 (*)
 
-Find the last element of a vector.
+*Find the last element of a vector*
 
-#### Example
+**Example**
 ```
       last 'abcde'
 'd'
@@ -16,9 +16,9 @@ Find the last element of a vector.
 
 ## Problem 2 (*)
 
-Find the last but one element of a vector.
+*Find the last but one element of a vector*
 
-#### Example
+**Example**
 ```
       but_last 'abcde'
 'c'
@@ -28,9 +28,9 @@ Find the last but one element of a vector.
 
 ## Problem 3 (*)
 
-Find the K'th element of a vector.
+*Find the K'th element of a vector*
 
-#### Example
+**Example**
 ```
       3 element_at 'abcde'
 'c'
@@ -40,9 +40,9 @@ Find the K'th element of a vector.
 
 ## Problem 4 (*)
 
-Find the number of elements of a vector.
+*Find the number of elements of a vector*
 
-#### Example
+**Example**
 ```
       length 'abcde'
 5
@@ -52,9 +52,9 @@ Find the number of elements of a vector.
 
 ## Problem 5 (*)
 
-Reverse a vector.
+*Reverse a vector*
 
-#### Example
+**Example**
 ```
       reverse 'abcde'
 'edcba'
@@ -64,10 +64,10 @@ Reverse a vector.
 
 ## Problem 6 (*)
 
-Find out whether a vector is palindrome. <br>
-A vector is palindrome if it can be read forward or backward; e.g. 'radar'.
+*Find out whether a vector is palindrome* <br>
+A vector is palindrome if it can be read forward or backward.
 
-#### Example
+**Example**
 ```
       is_palindrom 'radar'
 1
@@ -77,9 +77,9 @@ A vector is palindrome if it can be read forward or backward; e.g. 'radar'.
 
 ## Problem 7 (**)
 
-Flatten a nested vector.
+*Flatten a nested vector*
 
-#### Example
+**Example**
 ```
       flatten (1 (2 (3 4) 5))
 1 2 3 4 5 6 7 8 
@@ -89,10 +89,10 @@ Flatten a nested vector.
 
 ## Problem 8 (**)
 
-Eliminate consecutive duplicates in a vector. <br>
+*Eliminate consecutive duplicates in a vector* <br>
 If a vector contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed.
 
-#### Example
+**Example**
 ```
       compress 'aaaabccaadeeee'
 'abcade'
@@ -102,10 +102,10 @@ If a vector contains repeated elements they should be replaced with a single cop
 
 ## Problem 9 (**)
 
-Pack consecutive duplicate elements of vector into sub-vectors. <br>
+*Pack consecutive duplicate elements of vector into sub-vectors* <br>
 If a vector contains repeated elements they should be placed in separate sub-vectors.
 
-#### Example
+**Example**
 ```
       pack 'aaaabccaadeeee'
 'aaaa' 'b' 'cc' 'aa' 'd' 'eeee'
@@ -115,11 +115,11 @@ If a vector contains repeated elements they should be placed in separate sub-vec
 
 ## Problem 10 (*)
 
-Run-length encoding of a vector. <br>
+*Run-length encoding of a vector* <br>
 Use the result of P9 to implement the so-called run-length encoding data compression method. <br>
 Consecutive duplicates are encoded as (N E) where N is the number of duplicates of the element E.
 
-#### Example
+**Example**
 ```
       encode 'aaaabccaadeeee'
 (4 'a') (1 'b') (2 'c') (2 'a') (1 'd') (4 'e')
@@ -129,15 +129,15 @@ Consecutive duplicates are encoded as (N E) where N is the number of duplicates 
 
 ## Problem 11 (*)
 
-Modified run-length encoding. <br>
+*Modified run-length encoding* <br>
 Modify the result of P10 in such a way that if an element has no duplicates it is simply copied into the result vector. <br>
-Only elements with duplicates are encoded as (N E) .
+Only elements with duplicates are encoded as (N E).
 
-#### Example
+**Example**
 ```
-      encode_modified 'aaaabccaadeeee'
+      encode_mod 'aaaabccaadeeee'
 (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
-      encode_modified 1 1 1 1 2 3 3 1 1 4 5 5 5 5
+      encode_mod 1 1 1 1 2 3 3 1 1 4 5 5 5 5
 (4 1) 2 (2 3) (2 1) 4 (4 5)
 ```
 
@@ -146,34 +146,34 @@ Only elements with duplicates are encoded as (N E) .
 Decode a run-length encoded vector. <br>
 Given a run-length code vector generated as specified in P11, construct its uncompressed version.
 
-#### Example
+**Example**
 ```
-      decode_modified (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
+      decode_mod (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
 'aaaabccaadeeee'
-      decode_modified (4 1) 2 (2 3) (2 1) 4 (4 5)
+      decode_mod (4 1) 2 (2 3) (2 1) 4 (4 5)
 1 1 1 1 2 3 3 1 1 4 5 5 5 5
 ```
 
 ## Problem 13 (**)
 
-Run-length encoding of a list (direct solution). <br>
+*Run-length encoding of a list (direct solution)* <br>
 Implement the so-called run-length encoding data compression method directly. <br>
 I.e. don't explicitly create the sub-vectors containing the duplicates, as in P9, but only count them. <br>
 As in P11, simplify the result vector by replacing (1 E) by E.
 
-#### Example
+**Example**
 ```
-      encode_direct 'aaaabccaadeeee'
+      encode_dir 'aaaabccaadeeee'
 (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
-      encode_direct 1 1 1 1 2 3 3 1 1 4 5 5 5 5
+      encode_dir 1 1 1 1 2 3 3 1 1 4 5 5 5 5
 (4 1) 2 (2 3) (2 1) 4 (4 5)
 ```
 
 ## Problem 14 (*)
 
-Duplicate the elements of a vector.
+*Duplicate the elements of a vector*
 
-#### Example
+**Example**
 ```
         duplicate 'abccd'
 'aabbccccdd'   
@@ -183,33 +183,33 @@ Duplicate the elements of a vector.
 
 ## Problem 15 (**)
 
-Duplicate the elements of a vector given number of times.
+*Duplicate the elements of a vector given number of times*
 
-#### Example
+**Example**
 ```
-      3 x_duplicate 'abc'
+      3 replicate 'abc'
 'aaabbbccc'
-      3 x_duplicate 1 2 3
+      3 replicate 1 2 3
 1 1 1 2 2 2 3 3 3
 ```
 
 ## Problem 16 (**)
 
-Drop every N'th element from a vector.
+*Drop every N'th element from a vector*
 
-#### Example
+**Example**
 ```
       3 drop_every 'abcdefghik'
 'abdeghk'
       3 drop_every 10 9 8 7 6 5 4 3 2 1
-10 9 7 6 5 4 3 2 1
+10 9 7 6 4 3 1
 ```
 
 ## Problem 17 (*)
 
-Split a vector into two sub-vectors, given the length of the first sub-vector.
+*Split a vector into two sub-vectors, given the length of the first sub-vector*
 
-#### Example
+**Example**
 ```
       3 split 'abcdefghik'
 'abc' 'defghik'
@@ -219,10 +219,10 @@ Split a vector into two sub-vectors, given the length of the first sub-vector.
 
 ## Problem 18 (**)
 
-Extract a slice from a vector. <br>
+*Extract a slice from a vector* <br>
 Given two indices, I and K, the slice is the vector containing the elements between the I'th and K'th element of the original vector (both limits included).
 
-#### Example
+**Example**
 ```
       3 7 slice 'abcdefghik'
 'cdefg'
@@ -230,60 +230,63 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 8 7 6 5 4
 ```
 
-## Problem 19.1 (**)
+## Problem 19 (**)
 
-Rotate a vector N places to the left.
+*Rotate a vector N places to the left*
 
-#### Example
+**Example**
 ```
       3 rotate 'abcdefgh'
-'defghikabc'
+'defghabc'
       ¯2 rotate 1 2 3 4 5 6 7 8 9 10
 9 10 1 2 3 4 5 6 7 8
 ```
-## Problem 19.2 (**)
-
-Solve P19.1 using the result of P17.
 
 ## Problem 20 (*)
 
-Remove the K'th element from a vector.
+*Remove the K'th element from a vector*
 
-#### Example
+**Example**
 ```
-      2 remove_at 'abcd'
-'b' 'acd'
-      2 remove_at 4 3 2 1
-3 (4 2 1)
+      2 remove_at 'abcda'
+'acd'
+      1 remove_at 4 3 2 1 3
+4 2 1 3
 ```
 
 ## Problem 21 (*)
 
-Insert an element at a given position into a vector.
-
-#### Example
+*Insert an element at a given position into a vector*
 ```
-      'alfa' insert_at 2 ⊢1⊂'a' 'b' 'c' 'd'
+      1⊣ 2 {⍺ ⍺⍺ ⍵⍵ ⍵} 3 ⊢4
+1 2 3 4      
+```
+
+**Example**
+```
+      'alfa' insert_at 2 ⊢1⊂'abcd'
 'a' 'alfa' 'b' 'c' 'd'
-      (3 4) insert_at 3 ⊢(1 2) (5) (6 7 8)
+      'a' insert_at 3 ⊢1⊂'abcd'
+1⊂'abacd'
+      3 4 insert_at 3 ⊢(1 2) (5) (6 7 8)
 (1 2) (5) (3 4) (6 7 8)
 ```
 
 ## Problem 22 (*)
 
-Create a vector containing all integers within a given range.
+*Create a vector containing all integers within a given range*
 
-#### Example
+**Example**
 ```
-      range 4 9
+      4 range 9
 4 5 6 7 8 9
 ```
 
 ## Problem 23 (**)
 
-Extract a given number of randomly selected elements from a vector.
+*Extract a given number of randomly selected elements from a vector*
 
-#### Example
+**Example**
 ```
       3 rnd_select 'abcdefgh' ⍝ Result may be different
 'eda'
@@ -293,9 +296,9 @@ Extract a given number of randomly selected elements from a vector.
 
 ### Problem 24 (*)
 
-Lotto: Draw N different random numbers from ⍳M.
+*Lotto: Draw N different random numbers from ⍳M*
 
-#### Example
+**Example**
 ```
       6 lotto 49 ⍝ Result may be different
 23 1 17 33 21 37
@@ -303,29 +306,29 @@ Lotto: Draw N different random numbers from ⍳M.
 
 ## Problem 25 (*)
 
-Generate a random permutation of the elements of a vector.
+*Generate a random permutation of the elements of a vector*
 
-#### Example
+**Example**
 ```
-      rnd_permu 'abcdef' ⍝ Result may be different
+      rnd_perm 'abcdef' ⍝ Result may be different
 'badcef'
-      rnd_permu 1 2 3 4 5 6 ⍝ Result may be different
+      rnd_perm 1 2 3 4 5 6 ⍝ Result may be different
 6 2 4 3 1 5
 ```
 
 ## Problem 26 (**)
 
-Generate the combinations of K distinct objects chosen from the N elements of a vector (via backtracking).
+*Generate the combinations of K distinct objects chosen from the N elements of a vector (via backtracking)*
 
-#### Example
+**Example**
 ```
-      3 combination 'abcdef'
+      3 comb 'abcdef'
 'abc'
 'abd'
 'abe'
 ...
 'def'
-      4 combination 1 2 3 4 5
+      4 comb 1 2 3 4 5
 1 2 3 4
 1 2 3 5
 1 2 4 5
@@ -335,10 +338,10 @@ Generate the combinations of K distinct objects chosen from the N elements of a 
 
 ## Problem 27.1 (**)
 
-Group the elements of a set into disjoint subsets. (via backtracking). <br>
+*Group the elements of a set into disjoint subsets. (via backtracking)* <br>
 In how many ways can a group of 9 people work in 3 disjoint subgroups of 2, 3 and 4 persons?
 
-#### Example
+**Example**
 ```
       group 'aldo' 'beat' 'carla' 'david' 'evi' 'flip' 'gary' 'hugo' 'ida'
 ('aldo' 'beat') ('carla' 'david' 'evi') ('flip' 'gary' 'hugo' 'ida')
@@ -347,9 +350,9 @@ In how many ways can a group of 9 people work in 3 disjoint subgroups of 2, 3 an
 
 ## Problem 27.2 (**)
 
-Generalize P27.1 in a way that we can specify a vector of group sizes.
+*Generalize P27.1 in a way that we can specify a vector of group sizes*
 
-#### Example
+**Example**
 ```
       2 2 5 group 'aldo' 'beat' 'carla' 'david' 'evi' 'flip' 'gary' 'hugo' 'ida'
 ('aldo' 'beat') ('carla' 'david') ('evi' 'flip' 'gary' 'hugo' 'ida')
@@ -362,9 +365,9 @@ You may find more about this combinatorial problem searching ["Multinomial coeff
 
 ## Problem 28.1 (**)
 
-Sort ascendingly a vector of vectors according to length.
+*Sort ascendingly a vector of vectors according their length*
 
-#### Example
+**Example**
 ```
       lsort 'abc' 'de' 'fgh' 'de' 'ijkl' 'mn' 'o'
 'o' 'de' 'de' 'mn' 'abc' 'fgh' 'ijkl'
@@ -374,12 +377,13 @@ Sort ascendingly a vector of vectors according to length.
 
 ## Problem 28.2 (**)
 
-Sort ascendingly a vector of vectors according to their length frequency. Vectors with rare lengths are placed first, others with a more frequent length come later.
+*Sort ascendingly a vector of vectors according to their length frequency* <br>
+Vectors with rare lengths are placed first, others with a more frequent length come later.
 
-#### Example
+**Example**
 ```
-      lsort 'abc' 'de' 'fgh' 'de' 'ijkl' 'mn' 'o'
+      lfsort 'abc' 'de' 'fgh' 'de' 'ijkl' 'mn' 'o'
 'ijkl' 'o' 'abc' 'fgh' 'de' 'de' 'mn'
-      lsort (1 2 3) (4 5) (6 7 8) (9 10) (11 12 13 14) (15 16)
+      lfsort (1 2 3) (4 5) (6 7 8) (9 10) (11 12 13 14) (15 16)
 (11 12 13 14) (17) (1 2 3) (6 7 8) (4 5) (9 10) (15 16) 
 ```
