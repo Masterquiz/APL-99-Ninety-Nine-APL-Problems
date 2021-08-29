@@ -10,8 +10,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 ```
       last 'abcde'
 'd'
-      last 1 2 3 4 5
-5
 ```
 
 ## Problem 2 (*)
@@ -22,8 +20,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 ```
       but_last 'abcde'
 'c'
-      but_last 1 2 3 4 5
-4
 ```
 
 ## Problem 3 (*)
@@ -34,8 +30,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 ```
       3 element_at 'abcde'
 'c'
-      4 element_at 5 4 3 2 1
-2
 ```
 
 ## Problem 4 (*)
@@ -46,8 +40,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 ```
       length 'abcde'
 5
-      length 1 2 3 4 5
-5      
 ```
 
 ## Problem 5 (*)
@@ -58,8 +50,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 ```
       reverse 'abcde'
 'edcba'
-      reverse 1 2 3 4 5
-5 4 3 2 1
 ```
 
 ## Problem 6 (*)
@@ -71,7 +61,7 @@ A vector is palindrome if it can be read forward or backward.
 ```
       is_palindrom 'radar'
 1
-      is_palindrom 1 2 3 4
+      is_palindrom 3 1 4 1
 0
 ```
 
@@ -81,10 +71,8 @@ A vector is palindrome if it can be read forward or backward.
 
 **Example**
 ```
-      flatten (1 (2 (3 4) 5))
-1 2 3 4 5 6 7 8 
-      flatten ((⊂'a') ('b' (1⊂'c' 'd') 'e'))
-'abcde'     
+      flatten (3 (1 (4 1) 5) 9)
+3 1 4 1 5 9
 ```
 
 ## Problem 8 (**)
@@ -96,8 +84,6 @@ If a vector contains repeated elements they should be replaced with a single cop
 ```
       compress 'aaaabccaadeeee'
 'abcade'
-      compress 1 1 1 1 2 3 3 1 1 4 5 5 5 5
-1 2 3 1 4 5
 ```
 
 ## Problem 9 (**)
@@ -109,8 +95,6 @@ If a vector contains repeated elements they should be placed in separate sub-vec
 ```
       pack 'aaaabccaadeeee'
 'aaaa' 'b' 'cc' 'aa' 'd' 'eeee'
-      pack 1 1 1 1 2  3 3 1 1 4 5 5 5 5
-(1 1 1 1) (2) (3 3) (1 1) (4) (5 5 5 5)
 ```
 
 ## Problem 10 (*)
@@ -123,8 +107,6 @@ Consecutive duplicates are encoded as (N E) where N is the number of duplicates 
 ```
       encode 'aaaabccaadeeee'
 (4 'a') (1 'b') (2 'c') (2 'a') (1 'd') (4 'e')
-      encode 1 1 1 1 2 3 3 1 1 4 5 5 5 5
-(4 1) (1 2) (2 3) (2 1) (1 4) (4 5)
 ```
 
 ## Problem 11 (*)
@@ -137,8 +119,6 @@ Only elements with duplicates are encoded as (N E).
 ```
       encode_mod 'aaaabccaadeeee'
 (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
-      encode_mod 1 1 1 1 2 3 3 1 1 4 5 5 5 5
-(4 1) 2 (2 3) (2 1) 4 (4 5)
 ```
 
 ## Problem 12 (**)
@@ -150,8 +130,6 @@ Given a run-length code vector generated as specified in P11, construct its unco
 ```
       decode_mod (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
 'aaaabccaadeeee'
-      decode_mod (4 1) 2 (2 3) (2 1) 4 (4 5)
-1 1 1 1 2 3 3 1 1 4 5 5 5 5
 ```
 
 ## Problem 13 (**)
@@ -165,8 +143,6 @@ As in P11, simplify the result vector by replacing (1 E) by E.
 ```
       encode_dir 'aaaabccaadeeee'
 (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
-      encode_dir 1 1 1 1 2 3 3 1 1 4 5 5 5 5
-(4 1) 2 (2 3) (2 1) 4 (4 5)
 ```
 
 ## Problem 14 (*)
@@ -176,9 +152,7 @@ As in P11, simplify the result vector by replacing (1 E) by E.
 **Example**
 ```
         duplicate 'abccd'
-'aabbccccdd'   
-        duplicate 1 2 3 3 4
-1 1 2 2 3 3 3 3 4 4
+'aabbccccdd'
 ```
 
 ## Problem 15 (**)
@@ -189,8 +163,6 @@ As in P11, simplify the result vector by replacing (1 E) by E.
 ```
       3 replicate 'abc'
 'aaabbbccc'
-      3 replicate 1 2 3
-1 1 1 2 2 2 3 3 3
 ```
 
 ## Problem 16 (**)
@@ -201,8 +173,6 @@ As in P11, simplify the result vector by replacing (1 E) by E.
 ```
       3 drop_every 'abcdefghik'
 'abdeghk'
-      3 drop_every 10 9 8 7 6 5 4 3 2 1
-10 9 7 6 4 3 1
 ```
 
 ## Problem 17 (*)
@@ -213,8 +183,6 @@ As in P11, simplify the result vector by replacing (1 E) by E.
 ```
       3 split 'abcdefghik'
 'abc' 'defghik'
-      3 split 1 2 3 4 5 6 7 8 9 10
-(1 2 3) (4 5 6 7 8 9 10)
 ```
 
 ## Problem 18 (**)
@@ -226,8 +194,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 ```
       3 7 slice 'abcdefghik'
 'cdefg'
-      3 7 slice 10 9 8 7 6 5 4 3 2 1
-8 7 6 5 4
 ```
 
 ## Problem 19 (**)
@@ -250,17 +216,11 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 ```
       2 remove_at 'abcda'
 'acd'
-      1 remove_at 4 3 2 1 3
-4 2 1 3
 ```
 
 ## Problem 21 (*)
 
 *Insert an element at a given position into a vector*
-```
-      1⊣ 2 {⍺ ⍺⍺ ⍵⍵ ⍵} 3 ⊢4
-1 2 3 4      
-```
 
 **Example**
 ```
@@ -268,8 +228,14 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 'a' 'alfa' 'b' 'c' 'd'
       'a' insert_at 3 ⊢1⊂'abcd'
 1⊂'abacd'
-      3 4 insert_at 3 ⊢(1 2) (5) (6 7 8)
-(1 2) (5) (3 4) (6 7 8)
+      1 9 insert_at 3 ⊢(3 1) (4) (2 6 5)
+(3 1) (4) (1 9) (2 6 5)
+```
+```
+      3 {⍺⍺ ⍵⍵ ⍵} 1 ⊢4
+3 1 4
+      3 (1 {⍺ ⍺⍺ ⍵⍵ ⍵} 4) 1
+3 1 4 1      
 ```
 
 ## Problem 22 (*)
@@ -290,8 +256,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 ```
       3 rnd_select 'abcdefgh' ⍝ Result may be different
 'eda'
-      3 rnd_select 1 2 3 4 5 6 ⍝ Result may be different
-3 6 1
 ```
 
 ### Problem 24 (*)
@@ -312,8 +276,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 ```
       rnd_perm 'abcdef' ⍝ Result may be different
 'badcef'
-      rnd_perm 1 2 3 4 5 6 ⍝ Result may be different
-6 2 4 3 1 5
 ```
 
 ## Problem 26 (**)
@@ -328,12 +290,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 'abe'
 ...
 'def'
-      4 comb 1 2 3 4 5
-1 2 3 4
-1 2 3 5
-1 2 4 5
-1 3 4 5
-2 3 4 5
 ```
 
 ## Problem 27.1 (**)
@@ -371,8 +327,6 @@ You may find more about this combinatorial problem searching ["Multinomial coeff
 ```
       lsort 'abc' 'de' 'fgh' 'de' 'ijkl' 'mn' 'o'
 'o' 'de' 'de' 'mn' 'abc' 'fgh' 'ijkl'
-      lsort (1 2 3) (4 5) (6 7 8) (9 10) (11 12 13 14) (15 16)
-(17) (4 5) (9 10) (15 16) (1 2 3) (6 7 8) (11 12 13 14)
 ```
 
 ## Problem 28.2 (**)
@@ -384,6 +338,4 @@ Vectors with rare lengths are placed first, others with a more frequent length c
 ```
       lfsort 'abc' 'de' 'fgh' 'de' 'ijkl' 'mn' 'o'
 'ijkl' 'o' 'abc' 'fgh' 'de' 'de' 'mn'
-      lfsort (1 2 3) (4 5) (6 7 8) (9 10) (11 12 13 14) (15 16)
-(11 12 13 14) (17) (1 2 3) (6 7 8) (4 5) (9 10) (15 16) 
 ```
