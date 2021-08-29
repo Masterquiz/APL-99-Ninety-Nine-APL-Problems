@@ -10,7 +10,9 @@ This repository hosts a translation and a collection of solutions to those probl
 
 Solved problems:
     
-    First section (28 problems) - Missing p13, p27
+    First section (28 problems)
+        - Missing P13, P27
+        - P26 solved with library
 
 [Prolog site]: https://sites.google.com/site/prologsite/
 [99 Prolog Problems]: https://sites.google.com/site/prologsite/prolog-problems
