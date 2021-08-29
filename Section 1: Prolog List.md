@@ -1,4 +1,4 @@
-APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/prologsite/prolog-problems)
+APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/prologsite/prolog-problems/1)
 
 # Section 1: Prolog Lists
 
