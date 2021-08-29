@@ -4,7 +4,7 @@
 
     'cmat' ⎕CY 'dfns' ⍝  Dyalog's functions: https://dfns.dyalog.com/n_contents.htm
 
-    last ← ⊃∘⌽
+    last ← ⊃⌽
     but_last ← 2⊃⌽
     element_at ← ⊃
     length ← ≢
@@ -13,22 +13,22 @@
     flatten ← ∊
     compress ← ⊢⊢⍤/⍨1,2≠/⊢
     pack ← ⊢⊂⍨1,2≠/⊢
-    encode ← {(≢,⊃)¨⍵⊂⍨1,2≠/⍵}
-    encode_mod ← {(1~⍨≢,⊃)¨⍵⊂⍨1,2≠/⍵}
-    decode_mod ← {∊(//)¨⊆⍵}
+    encode ← (≢,⊃)¨pack
+    encode_mod ← (⊃,⍨1~⍨≢)¨pack
+    decode_mod ← ∊∘(⍴/¨⊆)
     encode_dir ← ⊢ ⍝ Not solved
     duplicate ← 2∘/
     replicate ← /
     drop_every ← {⍵/⍨0≠⍺|⍳≢⍵}
-    slice ← ↑,⍥⊂↓
-    split ← {⍵/⍨1=(⍺+0 1)⍸⍳≢⍵}
+    split ← ↑,⍥⊂↓
+    slice ← {⍵/⍨1=(⍺+0 1)⍸⍳≢⍵}
     rotate ← ⌽
-    remove_at ← {⍵[(⍳≢⍵)~⍺]}
-    insert_at ← {pos char←⍺ ⋄ char@pos⊢⍵\⍨pos≠⍳1+≢⍵}
-    range ← {⍺,⍺+⍳⍵-⍺}
-    rnd_select ← {⍵[⍺?≢⍵]}
+    remove_at ← ⊢⌷⍨∘⊂~⍨∘⍳∘≢   ⍝ Solution in Extended Dyalog APL: ~⍨∘⍳∘≢⊇⊢ or (⍳⍤≢⍛~⊇⊣)⍨
+    insert_at ← {⍵ (↑,(⊂⍺⍺),↓)⍨ ⍵⍵-1}
+    range ← ⊣+0,⍳⍤-⍨
+    rnd_select ← ⊢⌷⍨∘⊂?∘≢
     lotto ← ?
-    rnd_select ← ⊂∘(?⍨≢)⌷⊢
+    rnd_perm ← ?⍨≢⌷⊢
     comb ← cmat
     group ← ⊢ ⍝ Not solved
     lsort ← {⍵[⍋≢¨⍵]}
