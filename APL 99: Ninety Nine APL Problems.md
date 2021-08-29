@@ -148,9 +148,9 @@ Given a run-length code vector generated as specified in P11, construct its unco
 
 #### Example
 ```
-      decode (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
+      decode_modified (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
 'aaaabccaadeeee'
-      decode (4 1) 2 (2 3) (2 1) 4 (4 5)
+      decode_modified (4 1) 2 (2 3) (2 1) 4 (4 5)
 1 1 1 1 2 3 3 1 1 4 5 5 5 5
 ```
 
@@ -251,9 +251,9 @@ Remove the K'th element from a vector.
 
 #### Example
 ```
-      2 remove 'abcd'
+      2 remove_at 'abcd'
 'b' 'acd'
-      2 remove 4 3 2 1
+      2 remove_at 4 3 2 1
 3 (4 2 1)
 ```
 
