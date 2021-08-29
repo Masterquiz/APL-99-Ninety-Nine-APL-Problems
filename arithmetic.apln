@@ -1,0 +1,15 @@
+:Namespace arithmetic
+
+    ⎕IO ⎕ML ← 1
+    
+    'pco' ⎕CY 'dfns'
+
+    is_prime ← 1∘pco
+
+    factors ← 3∘pco
+
+    factors_mult ← ,¨1⊂2∘pco
+
+    prime_range ← (10∘pco 0 1+,)⊢⍤/(1-⍨⊣)↓⍳⍤⊢
+
+:EndNamespace
