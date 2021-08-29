@@ -14,7 +14,7 @@
     compress ← ⊢⊢⍤/⍨1,2≠/⊢
     pack ← ⊢⊂⍨1,2≠/⊢
     encode ← (≢,⊃)¨pack
-    encode_mod ← (⊃,⍨1~⍨≢)¨pack
+    encode_mod ← (1~⍨≢,⊃)¨pack
     decode_mod ← ∊∘(⍴/¨⊆)
     encode_dir ← ⊢ ⍝ Not solved
     duplicate ← 2∘/
