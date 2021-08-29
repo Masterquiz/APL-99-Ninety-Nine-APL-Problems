@@ -6,7 +6,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 
 *Find the last element of a vector*
 
-**Example**
 ```
       last 'abcde'
 'd'
@@ -16,7 +15,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 
 *Find the last but one element of a vector*
 
-**Example**
 ```
       but_last 'abcde'
 'c'
@@ -26,7 +24,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 
 *Find the K'th element of a vector*
 
-**Example**
 ```
       3 element_at 'abcde'
 'c'
@@ -36,7 +33,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 
 *Find the number of elements of a vector*
 
-**Example**
 ```
       length 'abcde'
 5
@@ -46,7 +42,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 
 *Reverse a vector*
 
-**Example**
 ```
       reverse 'abcde'
 'edcba'
@@ -57,7 +52,6 @@ APL translation of [Ninety-Nine Prolog Problems](https://sites.google.com/site/p
 *Find out whether a vector is palindrome* <br>
 A vector is palindrome if it can be read forward or backward.
 
-**Example**
 ```
       is_palindrom 'radar'
 1
@@ -69,7 +63,6 @@ A vector is palindrome if it can be read forward or backward.
 
 *Flatten a nested vector*
 
-**Example**
 ```
       flatten (3 (1 (4 1) 5) 9)
 3 1 4 1 5 9
@@ -80,7 +73,6 @@ A vector is palindrome if it can be read forward or backward.
 *Eliminate consecutive duplicates in a vector* <br>
 If a vector contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed.
 
-**Example**
 ```
       compress 'aaaabccaadeeee'
 'abcade'
@@ -91,7 +83,6 @@ If a vector contains repeated elements they should be replaced with a single cop
 *Pack consecutive duplicate elements of vector into sub-vectors* <br>
 If a vector contains repeated elements they should be placed in separate sub-vectors.
 
-**Example**
 ```
       pack 'aaaabccaadeeee'
 'aaaa' 'b' 'cc' 'aa' 'd' 'eeee'
@@ -103,7 +94,6 @@ If a vector contains repeated elements they should be placed in separate sub-vec
 Use the result of P9 to implement the so-called run-length encoding data compression method. <br>
 Consecutive duplicates are encoded as (N E) where N is the number of duplicates of the element E.
 
-**Example**
 ```
       encode 'aaaabccaadeeee'
 (4 'a') (1 'b') (2 'c') (2 'a') (1 'd') (4 'e')
@@ -115,7 +105,6 @@ Consecutive duplicates are encoded as (N E) where N is the number of duplicates 
 Modify the result of P10 in such a way that if an element has no duplicates it is simply copied into the result vector. <br>
 Only elements with duplicates are encoded as (N E).
 
-**Example**
 ```
       encode_mod 'aaaabccaadeeee'
 (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
@@ -126,7 +115,6 @@ Only elements with duplicates are encoded as (N E).
 Decode a run-length encoded vector. <br>
 Given a run-length code vector generated as specified in P11, construct its uncompressed version.
 
-**Example**
 ```
       decode_mod (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
 'aaaabccaadeeee'
@@ -139,7 +127,6 @@ Implement the so-called run-length encoding data compression method directly. <b
 I.e. don't explicitly create the sub-vectors containing the duplicates, as in P9, but only count them. <br>
 As in P11, simplify the result vector by replacing (1 E) by E.
 
-**Example**
 ```
       encode_dir 'aaaabccaadeeee'
 (4 'a') 'b' (2 'c') (2 'a') 'd' (4 'e')
@@ -149,7 +136,6 @@ As in P11, simplify the result vector by replacing (1 E) by E.
 
 *Duplicate the elements of a vector*
 
-**Example**
 ```
         duplicate 'abccd'
 'aabbccccdd'
@@ -159,7 +145,6 @@ As in P11, simplify the result vector by replacing (1 E) by E.
 
 *Duplicate the elements of a vector given number of times*
 
-**Example**
 ```
       3 replicate 'abc'
 'aaabbbccc'
@@ -169,7 +154,6 @@ As in P11, simplify the result vector by replacing (1 E) by E.
 
 *Drop every N'th element from a vector*
 
-**Example**
 ```
       3 drop_every 'abcdefghik'
 'abdeghk'
@@ -179,7 +163,6 @@ As in P11, simplify the result vector by replacing (1 E) by E.
 
 *Split a vector into two sub-vectors, given the length of the first sub-vector*
 
-**Example**
 ```
       3 split 'abcdefghik'
 'abc' 'defghik'
@@ -190,7 +173,6 @@ As in P11, simplify the result vector by replacing (1 E) by E.
 *Extract a slice from a vector* <br>
 Given two indices, I and K, the slice is the vector containing the elements between the I'th and K'th element of the original vector (both limits included).
 
-**Example**
 ```
       3 7 slice 'abcdefghik'
 'cdefg'
@@ -200,7 +182,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 
 *Rotate a vector N places to the left*
 
-**Example**
 ```
       3 rotate 'abcdefgh'
 'defghabc'
@@ -212,7 +193,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 
 *Remove the K'th element from a vector*
 
-**Example**
 ```
       2 remove_at 'abcda'
 'acd'
@@ -222,16 +202,12 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 
 *Insert an element at a given position into a vector*
 
-**Example**
 ```
       'alfa' insert_at 2 ⊢1⊂'abcd'
 'a' 'alfa' 'b' 'c' 'd'
-      'a' insert_at 3 ⊢1⊂'abcd'
-1⊂'abacd'
-      1 9 insert_at 3 ⊢(3 1) (4) (2 6 5)
-(3 1) (4) (1 9) (2 6 5)
 ```
 ```
+      ⍝ Operator syntax
       3 {⍺⍺ ⍵⍵ ⍵} 1 ⊢4
 3 1 4
       3 (1 {⍺ ⍺⍺ ⍵⍵ ⍵} 4) 1
@@ -242,7 +218,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 
 *Create a vector containing all integers within a given range*
 
-**Example**
 ```
       4 range 9
 4 5 6 7 8 9
@@ -252,7 +227,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 
 *Extract a given number of randomly selected elements from a vector*
 
-**Example**
 ```
       3 rnd_select 'abcdefgh' ⍝ Result may be different
 'eda'
@@ -262,7 +236,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 
 *Lotto: Draw N different random numbers from ⍳M*
 
-**Example**
 ```
       6 lotto 49 ⍝ Result may be different
 23 1 17 33 21 37
@@ -272,7 +245,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 
 *Generate a random permutation of the elements of a vector*
 
-**Example**
 ```
       rnd_perm 'abcdef' ⍝ Result may be different
 'badcef'
@@ -282,7 +254,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 
 *Generate the combinations of K distinct objects chosen from the N elements of a vector (via backtracking)*
 
-**Example**
 ```
       3 comb 'abcdef'
 'abc'
@@ -297,7 +268,6 @@ Given two indices, I and K, the slice is the vector containing the elements betw
 *Group the elements of a set into disjoint subsets. (via backtracking)* <br>
 In how many ways can a group of 9 people work in 3 disjoint subgroups of 2, 3 and 4 persons?
 
-**Example**
 ```
       group 'aldo' 'beat' 'carla' 'david' 'evi' 'flip' 'gary' 'hugo' 'ida'
 ('aldo' 'beat') ('carla' 'david' 'evi') ('flip' 'gary' 'hugo' 'ida')
@@ -308,7 +278,6 @@ In how many ways can a group of 9 people work in 3 disjoint subgroups of 2, 3 an
 
 *Generalize P27.1 in a way that we can specify a vector of group sizes*
 
-**Example**
 ```
       2 2 5 group 'aldo' 'beat' 'carla' 'david' 'evi' 'flip' 'gary' 'hugo' 'ida'
 ('aldo' 'beat') ('carla' 'david') ('evi' 'flip' 'gary' 'hugo' 'ida')
@@ -323,7 +292,6 @@ You may find more about this combinatorial problem searching ["Multinomial coeff
 
 *Sort ascendingly a vector of vectors according their length*
 
-**Example**
 ```
       lsort 'abc' 'de' 'fgh' 'de' 'ijkl' 'mn' 'o'
 'o' 'de' 'de' 'mn' 'abc' 'fgh' 'ijkl'
@@ -334,7 +302,6 @@ You may find more about this combinatorial problem searching ["Multinomial coeff
 *Sort ascendingly a vector of vectors according to their length frequency* <br>
 Vectors with rare lengths are placed first, others with a more frequent length come later.
 
-**Example**
 ```
       lfsort 'abc' 'de' 'fgh' 'de' 'ijkl' 'mn' 'o'
 'ijkl' 'o' 'abc' 'fgh' 'de' 'de' 'mn'
