@@ -4,32 +4,34 @@
 
     'cmat' ⎕CY 'dfns' ⍝  Dyalog's functions: https://dfns.dyalog.com/n_contents.htm
 
-    p01 ← ⊃∘⌽
-    p02 ← 2⊃⌽
-    p03 ← ⊃
-    p04 ← ≢
-    p05 ← ⌽
-    p06 ← (⊢≡⌽)
-    p07 ← ∊
-    p08 ← {⍵/⍨1,2≠/⍵}
-    p09 ← {⍵⊂⍨1,2≠/⍵}
-    p10 ← {(≢,⊃)¨⍵⊂⍨1,2≠/⍵}
-    p11 ← {(1~⍨≢,⊃)¨⍵⊂⍨1,2≠/⍵}
-    p12 ← {∊(//)¨⊆⍵}
-    p14 ← 2∘/
-    p15 ← /
-    p16 ← {⍵/⍨0≠⍺|⍳≢⍵}
-    p17 ← ↑,⍥⊂↓
-    p18 ← {⍵/⍨1=(⍺+0 1)⍸⍳≢⍵}
-    p19 ← ⌽
-    p20 ← {⍵[(⍳≢⍵)~⍺]}
-    p21 ← {pos char←⍺ ⋄ char@pos⊢⍵\⍨pos≠⍳1+≢⍵}
-    p22 ← {⍺,⍺+⍳⍵-⍺}
-    p23 ← {⍵[⍺?≢⍵]}
-    p24 ← ?
-    p26 ← cmat
-    p28a ← {⍵[⍋≢¨⍵]}
-    p28b ← {⍵⌷⍨{,/⍵[⍋≢¨⍵]}⊢∘↓⌸≢¨⍵}
+    last ← ⊃∘⌽
+    but_last ← 2⊃⌽
+    element_at ← ⊃
+    length ← ≢
+    reverse ← ⌽
+    is_palindrom ← ⊢≡⌽
+    flatten ← ∊
+    compress ← ⊢⊢⍤/⍨1,2≠/⊢
+    pack ← ⊢⊂⍨1,2≠/⊢
+    encode ← {(≢,⊃)¨⍵⊂⍨1,2≠/⍵}
+    encode_mod ← {(1~⍨≢,⊃)¨⍵⊂⍨1,2≠/⍵}
+    decode_mod ← {∊(//)¨⊆⍵}
+    encode_dir ← ⊢ ⍝ Not solved
+    duplicate ← 2∘/
+    replicate ← /
+    drop_every ← {⍵/⍨0≠⍺|⍳≢⍵}
+    slice ← ↑,⍥⊂↓
+    split ← {⍵/⍨1=(⍺+0 1)⍸⍳≢⍵}
+    rotate ← ⌽
+    remove_at ← {⍵[(⍳≢⍵)~⍺]}
+    insert_at ← {pos char←⍺ ⋄ char@pos⊢⍵\⍨pos≠⍳1+≢⍵}
+    range ← {⍺,⍺+⍳⍵-⍺}
+    rnd_select ← {⍵[⍺?≢⍵]}
+    lotto ← ?
+    rnd_select ← ⊂∘(?⍨≢)⌷⊢
+    comb ← cmat
+    group ← ⊢ ⍝ Not solved
+    lsort ← {⍵[⍋≢¨⍵]}
+    lfsort ← {⍵⌷⍨{,/⍵[⍋≢¨⍵]}⊢∘↓⌸≢¨⍵}
 
 :EndNamespace
-
